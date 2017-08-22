@@ -73,4 +73,25 @@ function clearHead() {
 
 ```
 
+**Save cookie**
+
+Save all the data to a cookie
+
+```js
+// calculate expiration for cookie
+// @param days: integer
+function expires(days) {
+  var _date = new Date();
+  var date = _date.setTime(_date.getTime() + (days*24*60*60*1000));
+  return date.toUTCString();
+}
+
+var val = "foo=bar;"
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+
+var expires = "expires=" + expires() + ";";
+document.cookie = val + expires + "path=/;";
+```
+
 
